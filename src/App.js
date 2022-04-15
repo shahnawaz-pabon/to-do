@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "./styles/main.css";
 
 export default function App() {
   const todos = useSelector((state) => state);
 
   return (
-    <div className="">
-      <h1>To do List</h1>
+    <div className="app">
+      <h1>Todo List</h1>
     </div>
   );
 }
