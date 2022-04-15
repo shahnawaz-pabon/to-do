@@ -1,24 +1,14 @@
-export const ADD_TODO = "ADD_TODO";
-export const DELETE_TODO = "DELETE_TODO";
-export const UPDATE_TODO = "UPDATE_TODO";
-
-export function addTodo(todo) {
-  return {
-    type: ADD_TODO,
-    payload: todo,
-  };
-}
-
-export function deleteTodo(todoid) {
-  return {
-    type: DELETE_TODO,
-    payload: todoid,
-  };
-}
-
-export function updateTodo(todo) {
-  return {
-    type: UPDATE_TODO,
-    payload: todo,
-  };
-}
+export const todos = [
+  {
+    id: "1",
+    item: "Buy Milk",
+  },
+  {
+    id: "2",
+    item: "Buy Apples",
+  },
+  {
+    id: "3",
+    item: "Buy Banana",
+  },
+];
