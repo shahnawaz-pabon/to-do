@@ -1,4 +1,10 @@
 .todo-app {
   font-family: sans-serif;
   text-align: center;
+  max-width: 50%;
+  align-items: center;
 }
+
+/* .todo-container {
+  max-width: 200px;
+} */

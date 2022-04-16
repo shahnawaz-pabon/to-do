@@ -15,6 +15,7 @@ const AddtTodo = () => {
         value={itemName}
         onChange={(e) => setItemName(e.target.value)}
       />
+
       <button
         className="btn btn-primary m-2"
         onClick={() => {
