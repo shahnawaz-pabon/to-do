@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 import { deleteTodo, updateTodo } from "../redux/actions";
 
@@ -48,13 +50,14 @@ const TodoItems = ({ todo }) => {
           className="btn badge badge-warning m-2"
           onClick={() => setEditable(!editable)}
         >
-          Edit
+          <FontAwesomeIcon icon={faPenToSquare} />
         </span>
+
         <span
           className="btn badge badge-danger m-2"
           onClick={() => dispatch(deleteTodo(todo.id))}
         >
-          Delete
+          <FontAwesomeIcon icon={faTrash} />
         </span>
       </div>
     </div>
