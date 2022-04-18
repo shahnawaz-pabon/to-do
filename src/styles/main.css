@@ -5,6 +5,11 @@
   max-width: 40%;
 }
 
+.todo-item__text--completed {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
 /** visibility filters **/
 .filter {
   padding: 0.3rem 0;

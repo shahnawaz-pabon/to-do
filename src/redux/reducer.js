@@ -1,8 +1,14 @@
-import { ADD_TODO, DELETE_TODO, UPDATE_TODO, SET_FILTER } from "./actions";
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  UPDATE_TODO,
+  SET_FILTER,
+  TOGGLE_TODO,
+} from "./actions";
 import { todos } from "./states";
 import { FILTERS } from "../constants/filter";
 
-const initialState = FILTERS.ALL;
+// const initialState = FILTERS.ALL;
 
 export const reducer = (state = todos, action) => {
   let newTodos;
@@ -24,6 +30,15 @@ export const reducer = (state = todos, action) => {
       console.log(getIndex);
       newTodos.splice(getIndex, 1, action.payload[1]);
       return newTodos;
+
+    case TOGGLE_TODO: {
+      let allTodos = [...state];
+      let todoToBeToggled = allTodos.find(
+        (todo) => todo.id === action.payload.id
+      );
+      todoToBeToggled.completed = !action.payload.completed;
+      return allTodos;
+    }
 
     case SET_FILTER:
       // return action.payload.filter;
