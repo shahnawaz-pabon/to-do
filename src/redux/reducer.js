@@ -1,5 +1,8 @@
-import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from "./actions";
+import { ADD_TODO, DELETE_TODO, UPDATE_TODO, SET_FILTER } from "./actions";
 import { todos } from "./states";
+import { FILTERS } from "../constants/filter";
+
+const initialState = FILTERS.ALL;
 
 export const reducer = (state = todos, action) => {
   let newTodos;
@@ -21,6 +24,10 @@ export const reducer = (state = todos, action) => {
       console.log(getIndex);
       newTodos.splice(getIndex, 1, action.payload[1]);
       return newTodos;
+
+    case SET_FILTER:
+      // return action.payload.filter;
+      console.log(action.payload.filter);
 
     default:
       return state;

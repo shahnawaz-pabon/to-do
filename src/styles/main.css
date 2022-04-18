@@ -4,3 +4,13 @@
   margin: 0 auto;
   max-width: 40%;
 }
+
+/** visibility filters **/
+.filter {
+  padding: 0.3rem 0;
+  margin: 0 0.3rem;
+  cursor: pointer;
+}
+.filter--active {
+  border-bottom: 1px solid black;
+}
