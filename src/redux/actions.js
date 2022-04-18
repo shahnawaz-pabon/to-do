@@ -33,6 +33,8 @@ export function toggleTodo(todo) {
 }
 
 export function setFilter(filter) {
+  console.log("filter");
+  console.log(filter);
   return {
     type: SET_FILTER,
     payload: { filter },

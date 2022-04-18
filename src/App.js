@@ -11,6 +11,7 @@ export default function App() {
   return (
     <div className="todo-app my-3">
       <VisibilityFilters />
+      <br></br>
       <h1>Todo List</h1>
       <AddTodo />
       <div className="todo-container">

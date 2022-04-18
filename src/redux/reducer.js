@@ -8,8 +8,6 @@ import {
 import { todos } from "./states";
 import { FILTERS } from "../constants/filter";
 
-// const initialState = FILTERS.ALL;
-
 export const reducer = (state = todos, action) => {
   let newTodos;
   switch (action.type) {
@@ -41,8 +39,31 @@ export const reducer = (state = todos, action) => {
     }
 
     case SET_FILTER:
-      // return action.payload.filter;
-      console.log(action.payload.filter);
+      let allTodos = [...state];
+      // const allTodos = getTodos(...state);
+      switch (action.payload.filter) {
+        case "completed":
+          return Object.assign(
+            {},
+            state,
+            state.filter(function (launch) {
+              return launch.completed;
+            })
+          );
+        // return [...state, allTodos.filter((todo) => todo.completed != false)];
+        case "incompleted":
+          return Object.assign(
+            {},
+            state,
+            state.filter(function (launch) {
+              return !launch.completed;
+            })
+          );
+        // return [...state, allTodos.filter((todo) => todo.completed != true)];
+        case "all":
+        default:
+          return allTodos;
+      }
 
     default:
       return state;
