@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { v1 as uuid } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolderPlus, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { addTodo } from "../redux/actions";
 
-const AddtTodo = () => {
+const AddTodo = () => {
   const dispatch = useDispatch();
   const [itemName, setItemName] = useState();
 
@@ -36,4 +36,4 @@ const AddtTodo = () => {
   );
 };
 
-export default AddtTodo;
+export default AddTodo;

@@ -1,10 +1,12 @@
 import React from "react";
 import cx from "classnames";
-import { connect } from "react-redux";
 import { setFilter } from "../redux/actions";
 import { FILTERS } from "../constants/filter";
+import { connect } from "react-redux";
 
 const VisibilityFilters = ({ activeFilter, setFilter }) => {
+  // console.log("activeFilter");
+  // console.log(activeFilter);
   return (
     <div className="visibility-filters">
       {Object.keys(FILTERS).map((filterKey) => {
@@ -27,6 +29,8 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
     </div>
   );
 };
+
+// export default VisibilityFilters;
 
 const mapStateToProps = (state) => {
   return { activeFilter: state.visibilityFilter };
