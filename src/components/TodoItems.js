@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cx from "classnames";
 import {
@@ -9,6 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { deleteTodo, updateTodo, toggleTodo } from "../redux/actions";
+
+import { getTodosByVisibilityFilter } from "../redux/selectors";
 
 const TodoItems = ({ todo }) => {
   const dispatch = useDispatch();
@@ -90,4 +92,23 @@ const TodoItems = ({ todo }) => {
   );
 };
 
-export default TodoItems;
+// export default TodoItems;
+
+const mapStateToProps = (state) => {
+  const { filters } = state;
+  console.log("visibilityFilter");
+  console.log(filters);
+  const todos = getTodosByVisibilityFilter(state, filters);
+  return { todos };
+  //   const allTodos = getTodos(state);
+  //   return {
+  //     todos:
+  //       visibilityFilter === VISIBILITY_FILTERS.ALL
+  //         ? allTodos
+  //         : visibilityFilter === VISIBILITY_FILTERS.COMPLETED
+  //           ? allTodos.filter(todo => todo.completed)
+  //           : allTodos.filter(todo => !todo.completed)
+  //   };
+};
+// export default TodoList;
+export default connect(mapStateToProps)(TodoItems);

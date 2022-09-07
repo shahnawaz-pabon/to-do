@@ -17,7 +17,9 @@ export default function App() {
       <div className="todo-container">
         {todos.todo && todos.todo.length
           ? todos.todo.map((todo) => {
-              return <TodoItem key={todo.id} todo={todo} />;
+              return (
+                <TodoItem key={todo.id} todo={todo} filters={todos.filters} />
+              );
             })
           : "No todos, yet!"}
       </div>
