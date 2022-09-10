@@ -5,6 +5,13 @@
   max-width: 40%;
 }
 
+/** todo list **/
+.todo-list {
+  margin-top: 1rem;
+  text-align: left;
+  list-style: none;
+}
+
 .todo-item__text--completed {
   text-decoration: line-through;
   color: lightgray;
