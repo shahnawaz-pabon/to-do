@@ -1,5 +1,5 @@
 export const FILTERS = {
-  ALL: "all",
-  COMPLETED: "completed",
-  INCOMPLETE: "incompleted",
+  ALL: "All",
+  COMPLETED: "Completed",
+  INCOMPLETE: "Incompleted",
 };
