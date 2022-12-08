@@ -12,6 +12,10 @@
   list-style: none;
 }
 
+.todo-item__text {
+  margin-bottom: 0px;
+}
+
 .todo-item__text--completed {
   text-decoration: line-through;
   color: lightgray;
@@ -22,6 +26,7 @@
   padding: 0.3rem 0;
   margin: 0 0.3rem;
   cursor: pointer;
+  text-transform: uppercase;
 }
 .filter--active {
   border-bottom: 2px solid black;
@@ -29,4 +34,24 @@
 
 .visibility-filters span{
   font-weight: bold;
+}
+
+
+/* .todo-container {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--font-color);
+  max-height: 400px;
+  overflow-y: auto;
+} */
+
+.todo-col {
+  margin: auto;
+}
+
+.todo {
+  border-radius: 10px;
+  text-align: left;
 }
