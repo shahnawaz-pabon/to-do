@@ -17,6 +17,14 @@ const TodoItems = ({ todo }) => {
   const dispatch = useDispatch();
   const [editable, setEditable] = useState(false);
   const [changedItem, setChangedItem] = useState();
+  const [isColorsOpen, setIsColorsOpen] = useState(false);
+  const [location, setLocation] = useState({});
+
+  const showColors = (e, id) => {
+    const { top, right } = e.target.getBoundingClientRect();
+    setLocation({ top, right, id });
+    setIsColorsOpen(true);
+  };
 
   return (
     <div className="row mx-2 border m-1 todo">
@@ -90,8 +98,8 @@ const TodoItems = ({ todo }) => {
 
       {/* Choose color action */}
       <span
-        className="btn badge badge-danger m-2"
-        onClick={() => console.log("painted")}
+        className="btn badge badge-dark m-2"
+        onClick={(e) => showColors(e, todo.id)}
       >
         <FontAwesomeIcon icon={faPaintBrush} />
       </span>
