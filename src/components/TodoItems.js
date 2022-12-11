@@ -6,6 +6,7 @@ import {
   faTrash,
   faPenToSquare,
   faClipboardCheck,
+  faPaintBrush,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { deleteTodo, updateTodo, toggleTodo } from "../redux/actions";
@@ -86,6 +87,15 @@ const TodoItems = ({ todo }) => {
         <FontAwesomeIcon icon={faTrash} />
       </span>
       {/* End of Delete Todo action */}
+
+      {/* Choose color action */}
+      <span
+        className="btn badge badge-danger m-2"
+        onClick={() => console.log("painted")}
+      >
+        <FontAwesomeIcon icon={faPaintBrush} />
+      </span>
+      {/* End of Choose color action */}
     </div>
   );
 };
