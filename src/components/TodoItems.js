@@ -22,6 +22,8 @@ const TodoItems = ({ todo }) => {
 
   const showColors = (e, id) => {
     const { top, right } = e.target.getBoundingClientRect();
+
+    console.log(top, right, id);
     setLocation({ top, right, id });
     setIsColorsOpen(true);
   };
