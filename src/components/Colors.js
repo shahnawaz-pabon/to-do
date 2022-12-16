@@ -28,15 +28,15 @@ const Colors = () => {
 
   return (
     <div ref={colorsRef} className="color-container">
-      <span style={{ backgroundColor: "#eb1313" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#e91e63" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#673ab7" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#009688" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#4caf50" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#00bcd4" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#ff5722" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#607d8b" }} onClick={changeColor}></span>
-      <span style={{ backgroundColor: "#795548" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#d35400" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#2c3e50" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#1abc9c" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#2980b9" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#7f8c8d" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#ffcb65" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#AEB6BF" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#27ae60" }} onClick={changeColor}></span>
+      <span style={{ backgroundColor: "#008080" }} onClick={changeColor}></span>
     </div>
   );
 };

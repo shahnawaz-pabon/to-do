@@ -66,3 +66,38 @@
   opacity: 0.85;
   border-radius: 10px;
 }
+
+/* CSS for Colors.js component */
+.color-container {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #eee;
+  padding: 3px;
+  gap: 3px;
+  border-radius: 10px;
+  z-index: 3;
+}
+.color-container > span {
+  border-radius: 5px;
+}
+.color-container:hover {
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00b3b3;
+  outline: 0px inset #7fffd4;
+  border-radius: 10px;
+  height: 50px;
+}
+/* End of CSS for Colors.js component */
