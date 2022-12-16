@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { useGlobalContext } from "./context";
+import { useSelector, useDispatch } from "react-redux";
+import { setColorsLocation, setIsColorsOpen } from "../redux/actions";
 
 const Colors = () => {
-  //   const { location, setIsColorsOpen, tasks, setTasks } = useGlobalContext();
+  const dispatch = useDispatch();
+  const { location, isColorOpen } = useSelector((state) => state.colors);
   const colorsRef = useRef(null);
 
   useEffect(() => {
@@ -14,12 +16,14 @@ const Colors = () => {
   const changeColor = (e) => {
     const color = e.target.style.backgroundColor;
     const { id } = location;
-    setTasks(
-      tasks.map((task) => {
-        return task.id === id ? { ...task, color: color } : task;
-      })
-    );
-    setIsColorsOpen(false);
+    // setTasks(
+    //   tasks.map((task) => {
+    //     return task.id === id ? { ...task, color: color } : task;
+    //   })
+    // );
+    console.log("color, id");
+    console.log(color, id);
+    dispatch(setIsColorsOpen(false));
   };
 
   return (

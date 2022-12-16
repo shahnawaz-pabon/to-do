@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch, connect } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, connect, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cx from "classnames";
 import {
@@ -9,7 +9,15 @@ import {
   faPaintBrush,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { deleteTodo, updateTodo, toggleTodo } from "../redux/actions";
+import Colors from "./Colors";
+
+import {
+  deleteTodo,
+  updateTodo,
+  toggleTodo,
+  setColorsLocation,
+  setIsColorsOpen,
+} from "../redux/actions";
 
 import { getTodosByVisibilityFilter } from "../redux/selectors";
 
@@ -17,15 +25,27 @@ const TodoItems = ({ todo }) => {
   const dispatch = useDispatch();
   const [editable, setEditable] = useState(false);
   const [changedItem, setChangedItem] = useState();
-  const [isColorsOpen, setIsColorsOpen] = useState(false);
-  const [location, setLocation] = useState({});
+  // const [colorsOpen, setColorsOpen] = useState(false);
+  // const [location, setLocation] = useState({});
+
+  const { location, isColorOpen } = useSelector((state) => state.colors);
+
+  // useEffect(() => {
+  //   console.log("props>>>>>");
+  //   console.log(isColorOpen);
+  //   const { top, right } = location;
+  //   colorsRef.current.style.left = `${right + 30}px`;
+  //   colorsRef.current.style.top = `${top - 20}px`;
+  // }, [isColorOpen]);
 
   const showColors = (e, id) => {
     const { top, right } = e.target.getBoundingClientRect();
 
     console.log(top, right, id);
-    setLocation({ top, right, id });
-    setIsColorsOpen(true);
+    dispatch(setColorsLocation({ top, right, id }));
+    // setColorsOpen(true);
+    console.log(isColorOpen);
+    dispatch(setIsColorsOpen(true));
   };
 
   return (
@@ -106,6 +126,8 @@ const TodoItems = ({ todo }) => {
         <FontAwesomeIcon icon={faPaintBrush} />
       </span>
       {/* End of Choose color action */}
+
+      {isColorOpen && <Colors />}
     </div>
   );
 };
@@ -114,8 +136,8 @@ const TodoItems = ({ todo }) => {
 
 const mapStateToProps = (state) => {
   const { filters } = state;
-  console.log("visibilityFilter");
-  console.log(filters);
+  // console.log("visibilityFilter");
+  // console.log(filters);
   const todos = getTodosByVisibilityFilter(state, filters);
   return { todos };
   //   const allTodos = getTodos(state);

@@ -1,4 +1,10 @@
-import { ADD_TODO, DELETE_TODO, UPDATE_TODO, TOGGLE_TODO } from "../actions";
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  UPDATE_TODO,
+  TOGGLE_TODO,
+  SET_IS_COLOR_OPEN,
+} from "../actions";
 import { todos } from "../states";
 
 const todo = (state = todos, action) => {
@@ -30,7 +36,6 @@ const todo = (state = todos, action) => {
       todoToBeToggled.completed = !action.payload.completed;
       return allTodos;
     }
-
     default:
       return state;
   }
