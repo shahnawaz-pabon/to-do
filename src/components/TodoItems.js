@@ -25,26 +25,12 @@ const TodoItems = ({ todo }) => {
   const dispatch = useDispatch();
   const [editable, setEditable] = useState(false);
   const [changedItem, setChangedItem] = useState();
-  // const [colorsOpen, setColorsOpen] = useState(false);
-  // const [location, setLocation] = useState({});
 
   const { location, isColorOpen } = useSelector((state) => state.colors);
 
-  // useEffect(() => {
-  //   console.log("props>>>>>");
-  //   console.log(isColorOpen);
-  //   const { top, right } = location;
-  //   colorsRef.current.style.left = `${right + 30}px`;
-  //   colorsRef.current.style.top = `${top - 20}px`;
-  // }, [isColorOpen]);
-
   const showColors = (e, id) => {
     const { top, right } = e.target.getBoundingClientRect();
-
-    console.log(top, right, id);
     dispatch(setColorsLocation({ top, right, id }));
-    // setColorsOpen(true);
-    console.log(isColorOpen);
     dispatch(setIsColorsOpen(true));
   };
 
@@ -136,19 +122,8 @@ const TodoItems = ({ todo }) => {
 
 const mapStateToProps = (state) => {
   const { filters } = state;
-  // console.log("visibilityFilter");
-  // console.log(filters);
   const todos = getTodosByVisibilityFilter(state, filters);
   return { todos };
-  //   const allTodos = getTodos(state);
-  //   return {
-  //     todos:
-  //       visibilityFilter === VISIBILITY_FILTERS.ALL
-  //         ? allTodos
-  //         : visibilityFilter === VISIBILITY_FILTERS.COMPLETED
-  //           ? allTodos.filter(todo => todo.completed)
-  //           : allTodos.filter(todo => !todo.completed)
-  //   };
 };
-// export default TodoList;
+
 export default connect(mapStateToProps)(TodoItems);
