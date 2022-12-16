@@ -1,4 +1,4 @@
-export const todos = [
+export const tasks = [
   {
     id: "1",
     item: "Buy Milk",

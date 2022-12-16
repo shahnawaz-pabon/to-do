@@ -21,7 +21,7 @@ import {
 
 import { getTodosByVisibilityFilter } from "../redux/selectors";
 
-const TodoItems = ({ todo }) => {
+const TodoItems = ({ todo, color }) => {
   const dispatch = useDispatch();
   const [editable, setEditable] = useState(false);
   const [changedItem, setChangedItem] = useState();
@@ -29,6 +29,8 @@ const TodoItems = ({ todo }) => {
   const { location, isColorOpen } = useSelector((state) => state.colors);
 
   const showColors = (e, id) => {
+    console.log("color");
+    console.log(color);
     const { top, right } = e.target.getBoundingClientRect();
     dispatch(setColorsLocation({ top, right, id }));
     dispatch(setIsColorsOpen(true));

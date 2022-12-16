@@ -16,7 +16,7 @@ export const getTodos = (store) =>
   getTodoList(store).map((id) => getTodoById(store, id));
 
 export const getTodosByVisibilityFilter = (store, visibilityFilter) => {
-  const allTodos = getTodos(store.todo);
+  const allTodos = getTodos(store.todos);
   // const allTodos = store.todo;
   // console.log("allTodos");
   // console.log(allTodos.filter((todo) => todo.completed));

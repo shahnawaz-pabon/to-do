@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import filters from "./filters";
-import todo from "./todos";
+import todos from "./todos";
 import colors from "./colors";
 
-export default combineReducers({ todo, filters, colors });
+export default combineReducers({ todos, filters, colors });

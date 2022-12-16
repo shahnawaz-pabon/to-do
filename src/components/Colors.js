@@ -5,6 +5,7 @@ import { setColorsLocation, setIsColorsOpen } from "../redux/actions";
 const Colors = () => {
   const dispatch = useDispatch();
   const { location, isColorOpen } = useSelector((state) => state.colors);
+  const { todo } = useSelector((state) => state);
   const colorsRef = useRef(null);
 
   useEffect(() => {
@@ -17,12 +18,12 @@ const Colors = () => {
     const color = e.target.style.backgroundColor;
     const { id } = location;
     // setTasks(
-    //   tasks.map((task) => {
+    //   todo.map((task) => {
     //     return task.id === id ? { ...task, color: color } : task;
     //   })
     // );
-    console.log("color, id");
-    console.log(color, id);
+    // console.log("color, id");
+    // console.log(color, id);
     dispatch(setIsColorsOpen(false));
   };
 

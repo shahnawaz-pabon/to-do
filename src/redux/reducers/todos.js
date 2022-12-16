@@ -1,7 +1,7 @@
 import { ADD_TODO, DELETE_TODO, UPDATE_TODO, TOGGLE_TODO } from "../actions";
-import { todos } from "../states";
+import { tasks } from "../states";
 
-const todo = (state = todos, action) => {
+const todos = (state = tasks, action) => {
   let newTodos;
   switch (action.type) {
     case ADD_TODO:
@@ -34,4 +34,4 @@ const todo = (state = todos, action) => {
   }
 };
 
-export default todo;
+export default todos;

@@ -3,9 +3,10 @@ import { SET_LOCATION, SET_IS_COLOR_OPEN } from "../actions";
 const initialState = {
   location: {},
   isColorOpen: false,
+  color: "#fff",
 };
 
-const filters = (state = initialState, action) => {
+const colors = (state = initialState, action) => {
   switch (action.type) {
     case SET_LOCATION: {
       return {
@@ -25,4 +26,4 @@ const filters = (state = initialState, action) => {
   }
 };
 
-export default filters;
+export default colors;
