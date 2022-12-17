@@ -6,7 +6,7 @@ import TodoItems from "./components/TodoItems";
 import VisibilityFilters from "./components/Filters";
 
 export default function App() {
-  const { todos, filters } = useSelector((state) => state);
+  const { todos, filters, colors } = useSelector((state) => state);
 
   return (
     <div className="todo-app my-3">
@@ -18,14 +18,29 @@ export default function App() {
         {todos && todos.length
           ? todos.map((todo) => {
               return filters == "all" ? (
-                <TodoItems key={todo.id} todo={todo} filters={filters} />
+                <TodoItems
+                  key={todo.id}
+                  todo={todo}
+                  filters={filters}
+                  color={colors}
+                />
               ) : filters == "completed" ? (
                 todo.completed && (
-                  <TodoItems key={todo.id} todo={todo} filters={filters} />
+                  <TodoItems
+                    key={todo.id}
+                    todo={todo}
+                    filters={filters}
+                    color={colors}
+                  />
                 )
               ) : (
                 !todo.completed && (
-                  <TodoItems key={todo.id} todo={todo} filters={filters} />
+                  <TodoItems
+                    key={todo.id}
+                    todo={todo}
+                    filters={filters}
+                    color={colors}
+                  />
                 )
               );
             })

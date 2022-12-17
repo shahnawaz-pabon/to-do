@@ -3,7 +3,6 @@ import { SET_LOCATION, SET_IS_COLOR_OPEN } from "../actions";
 const initialState = {
   location: {},
   isColorOpen: false,
-  color: "#fff",
 };
 
 const colors = (state = initialState, action) => {

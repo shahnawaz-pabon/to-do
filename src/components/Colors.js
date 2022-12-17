@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setColorsLocation, setIsColorsOpen } from "../redux/actions";
+import { setIsColorsOpen, setTodos } from "../redux/actions";
 
 const Colors = () => {
   const dispatch = useDispatch();
-  const { location, isColorOpen } = useSelector((state) => state.colors);
-  const { todo } = useSelector((state) => state);
+  const { location } = useSelector((state) => state.colors);
+  const { todos } = useSelector((state) => state);
   const colorsRef = useRef(null);
 
   useEffect(() => {
@@ -17,13 +17,15 @@ const Colors = () => {
   const changeColor = (e) => {
     const color = e.target.style.backgroundColor;
     const { id } = location;
-    // setTasks(
-    //   todo.map((task) => {
-    //     return task.id === id ? { ...task, color: color } : task;
-    //   })
-    // );
-    // console.log("color, id");
-    // console.log(color, id);
+
+    dispatch(
+      setTodos(
+        todos.map((todo) => {
+          return todo.id === id ? { ...todo, color: color } : todo;
+        })
+      )
+    );
+
     dispatch(setIsColorsOpen(false));
   };
 

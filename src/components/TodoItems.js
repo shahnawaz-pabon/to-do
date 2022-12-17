@@ -21,23 +21,24 @@ import {
 
 import { getTodosByVisibilityFilter } from "../redux/selectors";
 
-const TodoItems = ({ todo, color }) => {
+const TodoItems = ({ todo }) => {
   const dispatch = useDispatch();
   const [editable, setEditable] = useState(false);
   const [changedItem, setChangedItem] = useState();
 
-  const { location, isColorOpen } = useSelector((state) => state.colors);
+  const { isColorOpen } = useSelector((state) => state.colors);
 
   const showColors = (e, id) => {
-    console.log("color");
-    console.log(color);
     const { top, right } = e.target.getBoundingClientRect();
     dispatch(setColorsLocation({ top, right, id }));
     dispatch(setIsColorsOpen(true));
   };
 
   return (
-    <div className="row mx-2 border m-1 todo">
+    <div
+      className="row mx-2 border m-1 todo"
+      style={{ background: todo.color }}
+    >
       <div className="col todo-col">
         {editable ? (
           <div>

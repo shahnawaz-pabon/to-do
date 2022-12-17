@@ -5,6 +5,7 @@ export const SET_FILTER = "SET_FILTER";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const SET_LOCATION = "SET_LOCATION";
 export const SET_IS_COLOR_OPEN = "SET_IS_COLOR_OPEN";
+export const SET_TODOS = "SET_TODOS";
 
 export function addTodo(todo) {
   return {
@@ -52,5 +53,12 @@ export function setIsColorsOpen(colors) {
   return {
     type: SET_IS_COLOR_OPEN,
     payload: colors,
+  };
+}
+
+export function setTodos(todos) {
+  return {
+    type: SET_TODOS,
+    payload: todos,
   };
 }

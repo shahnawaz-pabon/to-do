@@ -1,4 +1,10 @@
-import { ADD_TODO, DELETE_TODO, UPDATE_TODO, TOGGLE_TODO } from "../actions";
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  UPDATE_TODO,
+  TOGGLE_TODO,
+  SET_TODOS,
+} from "../actions";
 import { tasks } from "../states";
 
 const todos = (state = tasks, action) => {
@@ -27,6 +33,11 @@ const todos = (state = tasks, action) => {
         (todo) => todo.id === action.payload.id
       );
       todoToBeToggled.completed = !action.payload.completed;
+      return allTodos;
+    }
+
+    case SET_TODOS: {
+      let allTodos = [...action.payload];
       return allTodos;
     }
     default:
