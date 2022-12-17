@@ -23,7 +23,6 @@ const todos = (state = tasks, action) => {
       let getIndex = newTodos.findIndex(
         (item) => item.id === action.payload[0].id
       );
-      console.log(getIndex);
       newTodos.splice(getIndex, 1, action.payload[1]);
       return newTodos;
 

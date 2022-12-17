@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, connect, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cx from "classnames";
@@ -17,6 +17,7 @@ import {
   toggleTodo,
   setColorsLocation,
   setIsColorsOpen,
+  setCustomEdit,
 } from "../redux/actions";
 
 import { getTodosByVisibilityFilter } from "../redux/selectors";
@@ -25,13 +26,19 @@ const TodoItems = ({ todo }) => {
   const dispatch = useDispatch();
   const [editable, setEditable] = useState(false);
   const [changedItem, setChangedItem] = useState();
-
+  const inputRef = useRef(null);
   const { isColorOpen } = useSelector((state) => state.colors);
 
   const showColors = (e, id) => {
     const { top, right } = e.target.getBoundingClientRect();
     dispatch(setColorsLocation({ top, right, id }));
     dispatch(setIsColorsOpen(true));
+  };
+
+  const editTodo = (todo) => {
+    dispatch(
+      setCustomEdit({ isEditing: true, editId: todo.id, name: todo.item })
+    );
   };
 
   return (
@@ -92,7 +99,7 @@ const TodoItems = ({ todo }) => {
       {/* Edit Todo action */}
       <span
         className="btn badge badge-warning m-2"
-        onClick={() => setEditable(!editable)}
+        onClick={() => editTodo(todo)}
       >
         <FontAwesomeIcon icon={faPenToSquare} />
       </span>

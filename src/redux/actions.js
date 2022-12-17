@@ -6,6 +6,7 @@ export const TOGGLE_TODO = "TOGGLE_TODO";
 export const SET_LOCATION = "SET_LOCATION";
 export const SET_IS_COLOR_OPEN = "SET_IS_COLOR_OPEN";
 export const SET_TODOS = "SET_TODOS";
+export const SET_CUSTOM_EDIT = "SET_CUSTOM_EDIT";
 
 export function addTodo(todo) {
   return {
@@ -60,5 +61,12 @@ export function setTodos(todos) {
   return {
     type: SET_TODOS,
     payload: todos,
+  };
+}
+
+export function setCustomEdit(payload) {
+  return {
+    type: SET_CUSTOM_EDIT,
+    payload: payload,
   };
 }
