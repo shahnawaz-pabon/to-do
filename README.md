@@ -21,6 +21,11 @@ To-do applications are well known to everyone. We benefit from having better org
 
 ### Used stacks
 
+- node `v14.19.3`, npm `v6.14.17`
+- React.js
+- React Redux
+- React Fontawesome
+
 <br>
 
 ### Features
@@ -35,6 +40,13 @@ To-do applications are well known to everyone. We benefit from having better org
 <br>
 
 ### Up and Run
+
+```sh
+git clone https://github.com/shahnawaz-pabon/to-do.git
+cd to-do
+npm i
+npm start
+```
 
 <br>
 
