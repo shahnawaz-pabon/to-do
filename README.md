@@ -12,6 +12,7 @@
 - [Features](#features)
 - [Up and Run](#up-and-run)
 - [Author](#author)
+- [License](#license)
 
 ### About
 
@@ -54,4 +55,9 @@ npm start
 
 - [Shahnawaz Hossan][author]
 
+## License
+
+[MIT][license] © [Shahnawaz Hossan][author]
+
 [author]: https://shahnawaz-pabon.github.io
+[license]: LICENSE
